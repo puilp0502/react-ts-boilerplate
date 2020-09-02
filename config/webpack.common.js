@@ -51,6 +51,9 @@ module.exports = (webpackEnv) => ({
     path: path.join(__dirname, '../dist'),
   },
   module: {
+    /* module.rules: Specifies how to transform source code of a module.
+     * Documentation: https://webpack.js.org/concepts/loaders/
+     */
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -63,7 +66,7 @@ module.exports = (webpackEnv) => ({
         use: [
           'babel-loader',
           'ts-loader',
-        ]
+        ],
       },
       {
         test: /\.css$/,
